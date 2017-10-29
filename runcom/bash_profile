@@ -1,0 +1,7 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(readlink -f ${BASH_SOURCE[0]})"
+BASEDIR="$(cd $(dirname "$SCRIPT_DIR")/.. && pwd)"
+
+EDITOR="vim"
+PATH="$PATH:$BASEDIR/bin"

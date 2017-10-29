@@ -1,0 +1,14 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:history:cd'
+shopt -s histappend
+
+alias ls='ls --color=auto'
+
+function mkcd { mkdir "$1" && cd "$1"; }

@@ -1,0 +1,100 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+" ===============
+" general options
+" ===============
+filetype plugin indent on
+syntax enable
+set hidden
+set autoread
+set history=1000
+set autochdir
+set undofile
+set undodir=~/.vim/undo
+set nowritebackup
+set nobackup
+set noswapfile
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=ucs-bom,utf-8,default,shift-jis,latin1
+set shellslash
+
+" ===============
+" editing options
+" ===============
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set backspace=indent,eol,start
+set cinoptions=(s,m1,h0
+set formatoptions-=o
+set nrformats-=octal
+set virtualedit=block
+set nojoinspaces
+
+if v:version > 703 || v:version == 703 && has("patch541")
+    set formatoptions+=j
+endif
+
+" ==========
+" ui options
+" ==========
+set ruler
+set wildmenu
+set wildmode=longest:full
+set wildignore=*.pyc,*.jpg,*.gif,*.png,*.exe
+set hlsearch
+set incsearch
+set laststatus=2
+set scrolloff=1
+set sidescrolloff=5
+set display+=lastline
+set list
+set listchars=tab:▸\ ,trail:←,nbsp:¬
+set cursorline
+set number
+set relativenumber
+set showcmd
+set ttyfast
+set mouse=
+set lazyredraw
+
+set background=dark
+set guioptions-=m
+set guioptions-=T
+set guioptions-=t
+
+if has('win32')
+    set guifont=DejaVu_Sans_Mono:h11,Lucida_Console:h11
+else
+    set guifont=DejaVu\ Sans\ Mono\ 11
+end
+
+silent! colorscheme molokai
+
+" =======
+" plugins
+" =======
+let loaded_matchparen = 1 " don't load matchparen plugin
+
+" if vim is recent enough, load built in package matchit
+if has('syntax') && has('eval')
+  packadd matchit
+endif
+
+" ========
+" mappings
+" ========
+let mapleader=" "
+
+nnoremap <Leader><Leader> :nohlsearch<CR>
+" for windows only:
+silent! vunmap <C-X>
+
+let g:ctrlp_map = '<Leader>p'
+nnoremap <Leader>b :CtrlPBuffer<CR>
+
+nnoremap <Leader>i :IndentLinesToggle<CR>
+
+nnoremap <Leader>r :RainbowParentheses!!<CR>
