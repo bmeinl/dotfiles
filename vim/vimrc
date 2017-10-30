@@ -1,3 +1,5 @@
+let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+let &runtimepath.=','.s:path
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
