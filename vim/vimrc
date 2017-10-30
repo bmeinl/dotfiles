@@ -85,8 +85,6 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
-let g:indent_guides_enable_on_vim_startup = 1
-
 " ========
 " mappings
 " ========

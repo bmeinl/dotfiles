@@ -1,14 +1,9 @@
 #!/bin/bash
 
 userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
 
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
-fi
-
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
 fi
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
@@ -19,16 +14,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # in case we run in a VM
-VBoxClient --clipboard --seamless --display --checkhostversion 2>&1 > /dev/null &
+VBoxClient-all
 
 export VDPAU_NVIDIA_NO_OVERLAY=1 # nvidia flash fix
 setxkbmap -option 'compose:ralt'
 setxkbmap -option 'compose:menu'
 
-##if xrandr | grep -q VGA; then
-##    xrandr --output VGA-0 --right-of LVDS-0
-##fi
-##
-##xflux -l 48.252644 -g 16.399960
-
-exec i3 -V /tmp/i3log-$(date +'%F-%k-%M-%S') 2>&1
+exec i3

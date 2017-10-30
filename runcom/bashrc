@@ -7,6 +7,8 @@ HISTCONTROL=ignoreboth
 HISTIGNORE='ls:history:cd'
 shopt -s histappend
 
+shopt -s extglob
+
 alias ls='ls --color=auto'
 
-function mkcd { mkdir "$1" && cd "$1"; }
+function mk { mkdir -p "$1" && cd "$1"; }

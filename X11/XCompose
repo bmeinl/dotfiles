@@ -1,0 +1,7 @@
+include "%L" # include default mappings
+
+<Multi_key> <V> <V>          : "✓" U2713 # CHECK MARK
+<Multi_key> <X> <X>          : "✗" U2717 # BALLOT X — <x> <x> taken by Xorg for multiply
+<Multi_key> <V> <underscore> : "✔" U2714 # HEAVY CHECK MARK
+<Multi_key> <X> <underscore> : "✘" U2718 # HEAVY BALLOT X
+
