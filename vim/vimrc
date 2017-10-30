@@ -73,7 +73,7 @@ else
     set guifont=DejaVu\ Sans\ Mono\ 11
 end
 
-silent! colorscheme molokai
+silent! colorscheme PaperColor
 
 " =======
 " plugins
@@ -85,18 +85,15 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+let g:indent_guides_enable_on_vim_startup = 1
+
 " ========
 " mappings
 " ========
-let mapleader=" "
-
-nnoremap <Leader><Leader> :nohlsearch<CR>
+"
 " for windows only:
 silent! vunmap <C-X>
 
-let g:ctrlp_map = '<Leader>p'
-nnoremap <Leader>b :CtrlPBuffer<CR>
+let mapleader=" "
 
-nnoremap <Leader>i :IndentLinesToggle<CR>
-
-nnoremap <Leader>r :RainbowParentheses!!<CR>
+nnoremap <Leader><Leader> :nohlsearch<CR>
