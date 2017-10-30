@@ -11,5 +11,6 @@ ln -fsv "$BASEDIR/runcom/inputrc" ~/.inputrc
 ln -fsv "$BASEDIR/runcom/bash_profile" ~/.bash_profile
 
 # x11
-ln -fsv "$BASEDIR/runcom/xinitrc" ~/.xinitrc
-ln -fsv "$BASEDIR/runcom/Xresources" ~/.Xresources
+ln -fsv "$BASEDIR/X11/xinitrc" ~/.xinitrc
+ln -fsv "$BASEDIR/X11/Xresources" ~/.Xresources
+ln -fsv "$BASEDIR/X11/Xcompose" ~/.Xcompose
