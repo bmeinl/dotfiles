@@ -13,4 +13,4 @@ ln -fsv "$BASEDIR/runcom/bash_profile" ~/.bash_profile
 # x11
 ln -fsv "$BASEDIR/X11/xinitrc" ~/.xinitrc
 ln -fsv "$BASEDIR/X11/Xresources" ~/.Xresources
-ln -fsv "$BASEDIR/X11/Xcompose" ~/.Xcompose
+ln -fsv "$BASEDIR/X11/XCompose" ~/.XCompose
