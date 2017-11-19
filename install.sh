@@ -9,6 +9,7 @@ ln -fsv "$BASEDIR/vim/vimrc" ~/.vimrc
 ln -fsv "$BASEDIR/runcom/bashrc" ~/.bashrc
 ln -fsv "$BASEDIR/runcom/inputrc" ~/.inputrc
 ln -fsv "$BASEDIR/runcom/bash_profile" ~/.bash_profile
+ln -fsv "$BASEDIR/runcom/dir_colors" ~/.dir_colors
 
 # x11
 ln -fsv "$BASEDIR/X11/xinitrc" ~/.xinitrc

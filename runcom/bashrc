@@ -10,6 +10,8 @@ shopt -s histappend
 shopt -s extglob
 shopt -s failglob
 
+eval $(dircolors ~/.dir_colors)
+
 alias ls='ls --color=auto'
 
 function mk { mkdir -p "$1" && cd "$1"; }
