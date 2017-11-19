@@ -1,17 +1,29 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(readlink -f ${BASH_SOURCE[0]})"
+BASEDIR="$(cd $(dirname "$SCRIPT_DIR")/.. && pwd)"
+
+EDITOR="vim"
+PATH="$PATH:$BASEDIR/bin"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
 HISTCONTROL=ignoreboth
 HISTIGNORE='ls:history:cd'
-shopt -s histappend
 
+shopt -s histappend
 shopt -s extglob
 shopt -s failglob
+shopt -s globstar
+shopt -s no_empty_cmd_completion
 
 eval $(dircolors ~/.dir_colors)
 
 alias ls='ls --color=auto'
 
 function mk { mkdir -p "$1" && cd "$1"; }
+
+function = { bc -ql <<< "$@"; }
