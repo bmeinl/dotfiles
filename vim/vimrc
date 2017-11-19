@@ -26,7 +26,6 @@ set shellslash
 " editing options
 " ===============
 set expandtab
-set tabstop=4
 set shiftwidth=4
 set backspace=indent,eol,start
 set cinoptions=(s,m1,h0
@@ -82,8 +81,14 @@ let loaded_matchparen = 1 " don't load matchparen plugin
 
 " if vim is recent enough, load built in package matchit
 if has('syntax') && has('eval')
-  packadd matchit
+    packadd matchit
 endif
+
+" Octave syntax
+augroup filetypedetect
+    autocmd! BufRead,BufNewFile *.m,*.oct set filetype=octave
+    autocmd FileType octave setlocal commentstring=%\ %s
+augroup END
 
 " ========
 " mappings
