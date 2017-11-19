@@ -8,6 +8,7 @@ HISTIGNORE='ls:history:cd'
 shopt -s histappend
 
 shopt -s extglob
+shopt -s failglob
 
 alias ls='ls --color=auto'
 
