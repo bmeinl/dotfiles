@@ -17,7 +17,6 @@ fi
 VBoxClient-all
 
 export VDPAU_NVIDIA_NO_OVERLAY=1 # nvidia flash fix
-setxkbmap -option 'compose:ralt'
 setxkbmap -option 'compose:menu'
 
 exec i3 -c $HOME/.i3config
