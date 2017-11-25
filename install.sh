@@ -15,3 +15,4 @@ ln -fsv "$BASEDIR/runcom/dir_colors" ~/.dir_colors
 ln -fsv "$BASEDIR/X11/xinitrc" ~/.xinitrc
 ln -fsv "$BASEDIR/X11/Xresources" ~/.Xresources
 ln -fsv "$BASEDIR/X11/XCompose" ~/.XCompose
+ln -fsv "$BASEDIR/X11/i3config" ~/.i3config
