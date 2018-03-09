@@ -16,7 +16,7 @@ fi
 # in case we run in a VM
 VBoxClient-all
 
-export VDPAU_NVIDIA_NO_OVERLAY=1 # nvidia flash fix
+#export VDPAU_NVIDIA_NO_OVERLAY=1 # nvidia flash fix
 setxkbmap -option 'compose:menu'
 
 exec i3 -c $HOME/.i3config

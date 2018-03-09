@@ -27,3 +27,19 @@ alias ls='ls --color=auto'
 function mk { mkdir -p "$1" && cd "$1"; }
 
 function = { bc -ql <<< "$@"; }
+
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+    local EXIT="$?"
+
+    PS1='[ '
+
+    if [ "$EXIT" != 0 ]; then
+        PS1+='\[\e[1;31m\]'
+    else
+        PS1+='\[\e[1;32m\]'
+    fi
+
+    PS1+='\w\[\e[0m\] ]\n\$ '
+}

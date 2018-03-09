@@ -90,6 +90,8 @@ augroup filetypedetect
     autocmd FileType octave setlocal commentstring=%\ %s
 augroup END
 
+let g:rainbow_active = 1
+
 " ========
 " mappings
 " ========
