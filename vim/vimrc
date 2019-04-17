@@ -21,6 +21,7 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=ucs-bom,utf-8,default,shift-jis,latin1
 set shellslash
+set foldmethod=marker
 
 " ===============
 " editing options
@@ -59,7 +60,7 @@ set relativenumber
 set showcmd
 set ttyfast
 set mouse=
-set lazyredraw
+"set lazyredraw
 
 set background=dark
 set guioptions-=m
@@ -102,3 +103,6 @@ silent! vunmap <C-X>
 let mapleader=" "
 
 nnoremap <Leader><Leader> :nohlsearch<CR>
+
+" don't change foldmethod for Perl6
+autocmd FileType perl6 setlocal foldmethod=marker

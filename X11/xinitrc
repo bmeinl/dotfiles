@@ -19,4 +19,7 @@ VBoxClient-all
 #export VDPAU_NVIDIA_NO_OVERLAY=1 # nvidia flash fix
 setxkbmap -option 'compose:menu'
 
+# faster key rate and delay
+xset r rate 200 100
+
 exec i3 -c $HOME/.i3config
