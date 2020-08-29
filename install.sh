@@ -22,3 +22,7 @@ ln -fsv "$BASEDIR/X11/i3config" ~/.i3config
 
 # copy locale.conf to /etc/ if sudo is installed
 sudo cp "$BASEDIR/locale.conf" /etc/locale.conf
+
+# link tpm submodule
+mkdir -p ~/.tmux/plugins
+ln -fsv "$BASEDIR/tpm" ~/.tmux/plugins/tpm

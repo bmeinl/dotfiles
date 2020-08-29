@@ -40,3 +40,6 @@
 [submodule "vim/bundle/rainbow"]
 	path = vim/bundle/rainbow
 	url = https://github.com/luochen1990/rainbow
+[submodule "tpm"]
+	path = tpm
+	url = https://github.com/tmux-plugins/tpm
