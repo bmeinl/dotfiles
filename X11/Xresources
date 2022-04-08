@@ -6,7 +6,7 @@ URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: firefox-developer-edition
 URxvt.url-select.underline: true
-URxvt.font: xft:DejaVu Sans Mono:size=10, xft:Noto Sans Mono, xft:Noto Color Emoji, xft:Unifont
+URxvt.font: xft:MesloLGS NF:size=11, xft:DejaVu Sans Mono:size=10, xft:Noto Sans Mono, xft:Noto Color Emoji, xft:Unifont
 
 Xft.dpi:        96
 Xft.antialias:  true
