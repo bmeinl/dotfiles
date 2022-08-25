@@ -1,7 +1,5 @@
 let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
-let &runtimepath.=','.s:path
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+execute 'set packpath+=' . s:path
 
 " ===============
 " general options
@@ -55,8 +53,8 @@ set display+=lastline
 set list
 set listchars=tab:▸\ ,trail:←,nbsp:¬
 set cursorline
-set number
-set relativenumber
+set nonumber
+set norelativenumber
 set showcmd
 set ttyfast
 set mouse=
@@ -73,7 +71,14 @@ else
     set guifont=DejaVu\ Sans\ Mono\ 11
 end
 
-silent! colorscheme PaperColor
+silent! colorscheme bubblegum-256-dark
+
+" vim hardcodes background color erase even if the terminfo file does
+" not contain bce (not to mention that libvte based terminals
+" incorrectly contain bce in their terminfo files). This causes
+" incorrect background rendering when using a color theme with a
+" background color.
+let &t_ut=''
 
 " =======
 " plugins
@@ -85,13 +90,10 @@ if has('syntax') && has('eval')
     packadd matchit
 endif
 
-" Octave syntax
-augroup filetypedetect
-    autocmd! BufRead,BufNewFile *.m,*.oct set filetype=octave
-    autocmd FileType octave setlocal commentstring=%\ %s
-augroup END
-
 let g:rainbow_active = 1
+
+" enable :Man support
+runtime! ftplugin/man.vim
 
 " ========
 " mappings
@@ -103,6 +105,35 @@ silent! vunmap <C-X>
 let mapleader=" "
 
 nnoremap <Leader><Leader> :nohlsearch<CR>
+nnoremap <leader><tab> <C-^>
 
-" don't change foldmethod for Perl6
-autocmd FileType perl6 setlocal foldmethod=marker
+" vim-fzf mappings
+" Mapping selecting mappings
+nmap <leader>m <plug>(fzf-maps-n)
+xmap <leader>m <plug>(fzf-maps-x)
+omap <leader>m <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+"imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+inoremap <expr> <c-x><c-f> fzf#vim#complete("fdfind <Bar> xargs realpath --relative-to " . expand("%:h"))
+
+nnoremap <leader>o :Files<cr>
+nnoremap <leader>g :GFiles<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>s :GFiles?<cr>
+nnoremap <leader>l :Lines<cr>
+
+" visual-multi
+let g:VM_leader = ','
+
+" airline
+let g:airline_theme='bubblegum'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_z=''
+au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%3p%% %l', 'maxlinenr', ' :%3v'])
+
+" fern
+nnoremap <leader>f <Plug>(fern-action-project-top:reveal)
