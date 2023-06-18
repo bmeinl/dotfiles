@@ -82,3 +82,6 @@
 [submodule "vim/pack/vendor/start/vim-fetch"]
 	path = vim/pack/vendor/start/vim-fetch
 	url = https://github.com/wsdjeg/vim-fetch
+[submodule "vim/pack/vendor/start/vim-kitty"]
+	path = vim/pack/vendor/start/vim-kitty
+	url = https://github.com/fladson/vim-kitty

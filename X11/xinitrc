@@ -8,4 +8,6 @@ fi
 
 setxkbmap -option 'compose:menu'
 
+xbindkeys
+
 exec i3
